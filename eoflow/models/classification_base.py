@@ -2,6 +2,7 @@ import logging
 
 import numpy as np
 import tensorflow as tf
+import tensorflow_addons as tfa
 from marshmallow import Schema, fields
 from marshmallow.validate import OneOf, ContainsOnly
 
@@ -26,7 +27,7 @@ classification_metrics = {
     'accuracy': tf.keras.metrics.CategoricalAccuracy(name='accuracy'),
     'precision': tf.keras.metrics.Precision,
     'recall': tf.keras.metrics.Recall,
-    'F1Score': F1Score
+    'F1Score': tfa.metrics.F1Score(num_classes=2, average=None)
 }
 
 
