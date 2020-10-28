@@ -26,7 +26,7 @@ classification_metrics = {
     'accuracy': tf.keras.metrics.CategoricalAccuracy(name='accuracy'),
     'precision': tf.keras.metrics.Precision,
     'recall': tf.keras.metrics.Recall,
-    'F1Score': lambda: F1Score(default_max_classes=2),
+    'F1Score': F1Score
 }
 
 
