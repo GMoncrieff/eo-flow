@@ -9,7 +9,7 @@ from marshmallow.validate import OneOf, ContainsOnly
 from ..base import BaseModel
 
 from .losses import CategoricalCrossEntropy, CategoricalFocalLoss
-from .metrics import InitializableMetric, F1Score
+from .metrics import InitializableMetric
 
 logging.basicConfig(level=logging.INFO,
                     format='%(asctime)s %(levelname)s %(message)s')
