@@ -8,7 +8,7 @@ from marshmallow.validate import OneOf, ContainsOnly
 from ..base import BaseModel
 
 from .losses import CategoricalCrossEntropy, CategoricalFocalLoss
-from .metrics import InitializableMetric
+from .metrics import InitializableMetric, F1Score
 
 logging.basicConfig(level=logging.INFO,
                     format='%(asctime)s %(levelname)s %(message)s')
@@ -25,7 +25,8 @@ classification_losses = {
 classification_metrics = {
     'accuracy': tf.keras.metrics.CategoricalAccuracy(name='accuracy'),
     'precision': tf.keras.metrics.Precision,
-    'recall': tf.keras.metrics.Recall
+    'recall': tf.keras.metrics.Recall,
+    'F1Score': lambda: F1Score(default_max_classes=2),
 }
 
 
